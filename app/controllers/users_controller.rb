@@ -10,8 +10,13 @@ class UsersController < ApplicationController
 			flash[:success] = "Welcome to the alpha blog #{@user.username}"
 			redirect_to articles_path
 		else
+			flash[:danger] = "There was something wrong with your registration details"
 			render 'new'
 		end
+	end
+
+	def index
+
 	end
 
 
