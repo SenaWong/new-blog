@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Alpha Blog</title>
+  <title>Custom Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -13,6 +13,10 @@
 	<%= render 'layouts/messages' %>
 
 	<div class="container">
+	<% if logged_in? %>
+		<p>Signed in as <%= current_user.username %></p>
+	<% end %>
+
 		<%= yield %>
 	</div>
 	<%= render 'layouts/footer' %>
